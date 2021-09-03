@@ -4,10 +4,8 @@
 
 class Employee : public Person
 {
-	public:
-		
-		Employee();
-		
+	public:	
+		Employee();		
 		void setPassword(string pinCode ){
 			if(pinCode.size()>=8 && pinCode.size()<20){
 				password=pinCode ;
