@@ -16,7 +16,7 @@ class Client : public Person
 		Client (){
 			pin_code = " " ;
 			balance = 0 ;
-			Currency = " " ;
+			Currency = "EGP" ;
 		}
 			// Setter
 			void setPinCode (string n){
@@ -25,7 +25,7 @@ class Client : public Person
 				pin_code = n ;
 			}
 			else {
-				cout << "pinCode must be digits chars and the size = 4" ;
+				cout << "Error : pinCode must be digits chars and the size = 4.\n\n" ;
 			}			
 			
 		}						
@@ -34,7 +34,8 @@ class Client : public Person
 				balance = b ;	
 			}
 			else {
-				cout << " Min balance is 1500 " << endl ;
+				balance = 1500 ;
+				cout << "Error : Min balance is 1500 .\n\n" << endl ;
 			}
 		}
 		void setCurrency (string c){
@@ -56,9 +57,9 @@ class Client : public Person
 						
 			void display (){
 			Person :: display () ;
-			cout << "PinCode is = " << this->getPinCode() <<endl;
-			cout << "Balance is = " << this->getBalance() <<endl;
-			cout << "Currency is = "<< this->getCurrency() <<endl;	
+			cout << "PinCode     = " << this->getPinCode() <<endl;
+			cout << "Balance     = " << this->getBalance() <<endl;
+			cout << "Currency    = "<< this->getCurrency() <<endl;	
 		}
 };
 
