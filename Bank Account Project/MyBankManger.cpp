@@ -7,78 +7,77 @@ using namespace std ;
 
 int main(int argc, char** argv) {
  // parameters
-string name , national_id , pin_code , Currency , password ;
-int id ;
-double balance , salary ;
-
-//--------------------------------------------------------------
- //  client
-Client c1 ;
-cout << " Enter Client Name : ";
-cin >> name ;
-c1.setName(name);
-cout << c1.getName() <<endl ;
-
-cout << " Enter National Id : ";
-cin >> national_id ;
-c1.setNationalId(national_id);
-cout << c1.getNationalId() <<endl ;
-   
-cout << " Enter Pin Code : ";
-cin >> pin_code ;
-c1.setPinCode(pin_code);
-cout << c1.getPinCode() <<endl ;
+string s ;
+int x , i ;
+double d ;
  
-cout << " Enter Balance : ";
-cin >> balance ;
-c1.setBalance(balance);
-cout << c1.getBalance() <<endl ;
-  
-cout << " Enter ID : ";
-cin >> id ;
-c1.setId(id);
-cout  << c1.getId() <<endl ;
-  
-cout << " Enter Currency : ";
-cin >> Currency ;
-c1.setCurrency(Currency);
-cout  << c1.getCurrency() <<endl ;
+ // objects
+Client* c1 = new Client ;
+Employee* emp1 = new Employee ;
+
+// welcome screen 
+cout << endl << " ------------------- welcome to Egypt Bank System ------------------- " << endl <<endl ;
+cout << endl << "Please Enter Your Type \n\n"  <<"1- Client . \n\n" <<"2- Employee . \n\n" << "choice : " ;
+cin >>x ;
+cout << "-------------------------------------------------------" <<endl << endl ;
+switch (x ) {	
+case 1 :
+//----------------------Client-------------------------------------
+cout <<"\nEnter Client Name : ";
+cin >> s ;
+c1->setName(s);	
+
+cout << "Enter National Id : ";
+cin >> s ;
+c1->setNationalId(s);
    
+cout << "Enter Pin Code : ";
+cin >> s ;
+c1->setPinCode(s);
+ 
+cout << "Enter Balance : ";
+cin >> d ;
+c1->setBalance(d);
+  
+cout << "Enter ID : ";
+cin >> i ;
+c1->setId(i);
+  
+cout << "Enter Currency : ";
+cin >> s ;
+c1->setCurrency(s);
+
 cout << "-------- Client Info is --------" << endl ;
-c1.display();
+c1->display();	
+break ;
+case 2 :
+//----------------------Employee-------------------------------------
+cout << "Enter Employee Name : ";
+cin >> s ;
+emp1->setName(s);
 
-//-----------------------------------------------------------
-
- //  Employee
-Employee emp1 ;
-cout << " Enter Employee Name : ";
-cin >> name ;
-emp1.setName(name);
-cout << emp1.getName() <<endl ;
-
-cout << " Enter National Id : ";
-cin >> national_id ;
-emp1.setNationalId(national_id);
-cout << emp1.getNationalId() <<endl ;
+cout << "Enter National Id : ";
+cin >> s ;
+emp1->setNationalId(s);
  
-cout << " Enter ID : ";
-cin >> id ;
-emp1.setId(id);
-cout  << emp1.getId() <<endl ;
+cout << "Enter ID : ";
+cin >> i ;
+emp1->setId(i);
  
-cout << " Enter password : ";
-cin >> password ;
-emp1.setPassword(password);
-cout << emp1.getPassword() <<endl ;
+cout << "Enter password : ";
+cin >> s ;
+emp1->setPassword(s);
  
-cout << " Enter Salary : ";
-cin >> salary ;
-emp1.setSalary(salary);
-cout << emp1.getSalary() <<endl ;
-  
-   
+cout << "Enter Salary : ";
+cin >> d ;
+emp1->setSalary(d);
+ 
 cout << "-------- Employee Info is --------" << endl ;
-emp1.display();
+emp1->display();	
+break;	
+default :cout<<"Error : Not a valid Number ";	
+}
+
 
 	return 0;
 }
