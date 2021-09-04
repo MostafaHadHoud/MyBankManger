@@ -25,7 +25,7 @@ class Employee : public Person
 				password = p ;
 			}
 			else {
-				cout << "password must not contain white space and the sizebetween 8 and 20" ;
+				cout << "Error :password must not contain white space and the sizebetween 8 and 20 .\n\n" ;
 			}
 		}
 		
@@ -34,7 +34,8 @@ class Employee : public Person
 				salary = b ;	
 			}
 			else {
-				cout << " Min Salary is 5000 " << endl ;
+				salary = 5000 ;
+				cout << " Error :Min Salary is 5000 .\n\n" << endl ;
 			}
 	}
 			
@@ -43,6 +44,7 @@ class Employee : public Person
 			return password ;
 		}
 		
+		
 		double getSalary () {
 			return salary ;
 		}
@@ -50,8 +52,8 @@ class Employee : public Person
 		
 			void display () {
 			Person :: display () ;
-			cout << "password is = " << this->getPassword() <<endl;
-			cout << "Salary is = " << this->getSalary() <<endl;
+			cout << "password    = " << this->getPassword() <<endl;
+			cout << "Salary      = " << this->getSalary() <<endl;
 		}	
 		
 };
