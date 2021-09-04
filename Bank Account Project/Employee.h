@@ -1,40 +1,58 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
+#include "Terms.h"
 #include "Person.h"
+using namespace std ;
 
-class Employee : public Person
+class Employee : public Person 
 {
-	public:	
-		Employee();		
-		void setPassword(string pinCode ){
-			if(pinCode.size()>=8 && pinCode.size()<20){
-				password=pinCode ;
-			}else{
-				cout<<"the paswword must be between 8 and 20 numbers"<< endl;
-			}
-		}
-		
-		void setSalary(double s){
-			if (s>=5000){
-				salary = s;
+	private:
+	string password ;
+	double salary ;
 	
-			}else{
-				salary = 5000 ;
+	
+	public:
+		// constructor 
+		Employee (){
+			password = " ";
+			salary = 0 ;
+		}
+		
+		// Setters		
+		void setPassword (string p){
+			Terms t1 ;
+					if( t1.Withoutspace(p) == 1 && t1.isLenght(p,8,20) == 1){
+				password = p ;
+			}
+			else {
+				cout << "password must not contain white space and the sizebetween 8 and 20" ;
 			}
 		}
 		
+		void setSalary (double b){
+			if ( b>=5000){
+				salary = b ;	
+			}
+			else {
+				cout << " Min Salary is 5000 " << endl ;
+			}
+	}
+			
+			// Getter					
 		string getPassword (){
 			return password ;
 		}
 		
-		double getSalary (){
+		double getSalary () {
 			return salary ;
 		}
+			// Display			
 		
-	protected:
-		
-		string password ;
-		double salary ;
+			void display () {
+			Person :: display () ;
+			cout << "password is = " << this->getPassword() <<endl;
+			cout << "Salary is = " << this->getSalary() <<endl;
+		}	
 		
 };
 
