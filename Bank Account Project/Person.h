@@ -24,7 +24,7 @@ class Person
 				name = n ;
 			}
 			else {
-				cout << "the name must be alphabetic chars and min size 5 and max size 20" ;
+				cout << "Error : the name must be alphabetic chars and min size 5 and max size 20 .\n\n" ;
 			}		
 		}
 				
@@ -34,7 +34,7 @@ class Person
 				national_id = n ;
 			}
 			else {
-				cout << " national id must be digits chars and the size = 14" ;
+				cout << "Error :  national id must be digits chars and the size = 14 .\n\n" ;
 			}					
 		}		
 		void setId (int i){
@@ -56,9 +56,9 @@ class Person
 		
 		// Display Function
 		void display (){
-			cout << "name is = " << this->getName() <<endl;
-			cout << "National Id is = " << this->getNationalId() << endl;
-			cout << "Id is = " << this->getId() << endl;	
+			cout << "name        = " << this->getName() <<endl;
+			cout << "National Id = " << this->getNationalId() << endl;
+			cout << "Id          = " << this->getId() << endl;	
 		}		
 		
 		
