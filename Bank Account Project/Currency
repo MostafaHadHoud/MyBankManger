@@ -1,0 +1,73 @@
+#ifndef CURRENCY__H
+#define CURRENCY__H
+#include <iostream>
+#include "Terms.h"
+#include <fstream>
+
+using namespace std ;
+
+class Currency 
+{
+	
+	protected:
+		string name ; 
+		int id ;
+		double value ;
+	
+	
+	public:
+	
+		
+		void setName (string n){
+			name = n ;
+		}
+		
+		void setId(int i){
+			id = i ;
+		}
+		
+		void setValue( double v){
+		if( v >=0 ){
+			value = v ;
+		} else {
+				cout << "value must not  be Negative Number\n" ;
+		}
+		}
+		void setAllInfodataForCurrency(Currency c){
+		//	 
+		//	c.setName(string n);
+		//	c.setId(int i);
+		//	c.setValue(double v);
+		
+			this->setName(string n);
+			this->setId(i) ;
+			this->setValue(v) ;
+			
+			return c ;
+		}
+		
+		string getCurrency (){
+		return name ;
+		}
+		
+		double Value(){
+			return value ;
+		}
+		
+		int getId(){
+			return id ;
+		}
+		
+		
+		Currency (){
+		
+			name = " " ;
+			id = 0 ;
+			value = 0 ;
+	}
+		
+	
+
+};
+
+#endif
