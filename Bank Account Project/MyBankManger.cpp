@@ -1,6 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include "Client.h"
 #include "Employee.h"
+#include "Currency.h"
 using namespace std ;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -10,6 +12,10 @@ int main(int argc, char** argv) {
 string s ;
 int x , i ;
 double d ;
+fstream MyClient ("Client.txt",ios :: out);
+fstream MyEmployee ("Employee.txt",ios :: out);
+fstream MyAdmin ("Admin.txt",ios :: out);
+fstream MyCurrency ("Currency.txt",ios :: out);
  
  // objects
 Client* c1 = new Client ;
