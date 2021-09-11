@@ -1,73 +1,60 @@
-#ifndef CURRENCY__H
-#define CURRENCY__H
-#include <iostream>
-#include "Terms.h"
-#include <fstream>
+#ifndef CURRENCY_H
+#define CURRENCY_H
 
 using namespace std ;
 
-class Currency 
+class Currency
 {
-	
-	protected:
-		string name ; 
+	private:
+		string name ;
 		int id ;
 		double value ;
-	
-	
+		
 	public:
-	
-		
-		void setName (string n){
-			name = n ;
+		Currency (){
+		name = " ";
+		id = 0 ;
+		value = 0 ;	
 		}
 		
-		void setId(int i){
-			id = i ;
+		void setName (string Name){
+			name = Name ;
 		}
 		
-		void setValue( double v){
-		if( v >=0 ){
-			value = v ;
-		} else {
-				cout << "value must not  be Negative Number\n" ;
-		}
-		}
-		void setAllInfodataForCurrency(Currency c){
-		//	 
-		//	c.setName(string n);
-		//	c.setId(int i);
-		//	c.setValue(double v);
-		
-			this->setName(string n);
-			this->setId(i) ;
-			this->setValue(v) ;
-			
-			return c ;
+		void setId ( int Id){
+			id = Id ;
 		}
 		
-		string getCurrency (){
-		return name ;
+		void setValue (double Value){
+			if (Value>0)
+				value = Value ;		
+			else 
+				cout << "value can't be  negative number\n" ;
 		}
 		
-		double Value(){
-			return value ;
+		string getName (){
+			return name ;
 		}
 		
-		int getId(){
+		int getId (){
 			return id ;
 		}
 		
+		double getValue (){
+			return value ;
+		}
 		
-		Currency (){
+			//Operator Overloading to save object to file
+			friend ostream& operator<<(ostream& os, Currency s)
+	{
+		os <<"Currency Name = " << s.getName()<< " ," ;
+		os <<"Id = "  << s.getId()<< " ," ;
+		os <<"Value = " << s.getValue()<< '\n' ;
+		os  << "---------------"<< '\n' ;
+		return os;
 		
-			name = " " ;
-			id = 0 ;
-			value = 0 ;
-	}
+	}		
 		
-	
-
 };
 
 #endif
