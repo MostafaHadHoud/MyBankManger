@@ -18,51 +18,37 @@ class Person
 		id = 0 ;
 	}	
 	//setters	
-	void setName (string n){
-		Terms t1 ;
-			if( t1.isAlphabetic(n) == 0&& t1.isLenght(n,5,20) == 1){
-				name = n ;
-			}
-			else {
-				cout << "Error : the name must be alphabetic chars and min size 5 and max size 20 .\n\n" ;
+	void setName (string Name){
+			if( Terms::isAlphabetic(Name)&& Terms::isLenght(Name,5,20))
+				name = Name ;
+				else 
+				cout << "Error : the name must be alphabetic chars and min size 5 and max size 20 .\n\n" ;				
+			}				
+	void setNationalId (string nationalId){
+			if( (Terms::isDigits(nationalId)) && (nationalId.length() == 14) )
+				national_id = nationalId ;	
+			else 
+				cout << "Error :  national id must be digits chars and the size = 14 .\n\n" ;								
 			}		
-		}
-				
-	void setNationalId (string n){
-		Terms t1 ;
-			if( (t1.isDigits(n) == 1) && (n.length() == 14) ){
-				national_id = n ;
-			}
-			else {
-				cout << "Error :  national id must be digits chars and the size = 14 .\n\n" ;
-			}					
-		}		
-		void setId (int i){
-		id = i ;
-		}		
-	
-				
+	void setId (int Id){
+		id = Id ;
+		}						
 		// Getters		
 			string getName (){
 			return name ;
 		}		
-		string getNationalId (){
+	string getNationalId (){
 		return national_id ;
-		}
-				
-		int getId (){
+		}				
+	int getId (){
 		return id ;
-		}	
-		
+		}			
 		// Display Function
-		void display (){
-			cout << "name        = " << this->getName() <<endl;
-			cout << "National Id = " << this->getNationalId() << endl;
-			cout << "Id          = " << this->getId() << endl;	
-		}		
-		
-		
-		
+	void display (){
+			cout << "name          = " << this->getName() <<endl;
+			cout << "National Id   = " << this->getNationalId() << endl;
+			cout << "Id            = " << this->getId() << endl;	
+		}				
 };
 
 #endif
