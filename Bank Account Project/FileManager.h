@@ -50,13 +50,13 @@ class FileManager
 		vector<string> vecOfStrs;
 	ifstream in("Clients.txt");
 	string str;
-	while (std::getline(in, str))
+	while (getline(in, str))
 			{
     if(str.size() > 0)
         vecOfStrs.push_back(str);
 			}
-	for(std::string & line : vecOfStrs)
-            std::cout<<line<<std::endl;
+	for(string & line : vecOfStrs)
+            cout<<line<<endl;
     }
     
      	//retrieve from Currency.txt	
@@ -64,13 +64,13 @@ class FileManager
 		vector<string> vecOfStrs;
 	ifstream in("Currency.txt");
 	string str;
-	while (std::getline(in, str))
+	while (getline(in, str))
 			{
     if(str.size() > 0)
         vecOfStrs.push_back(str);
 			}
-	for(std::string & line : vecOfStrs)
-            std::cout<<line<<std::endl;
+	for(string & line : vecOfStrs)
+            cout<<line<<endl;
     }
 
 	 	//retrieve from Employee.txt	
@@ -78,13 +78,13 @@ class FileManager
 		vector<string> vecOfStrs;
 	ifstream in("Employee.txt");
 	string str;
-	while (std::getline(in, str))
+	while (getline(in, str))
 			{
     if(str.size() > 0)
         vecOfStrs.push_back(str);
 			}
-	for(std::string & line : vecOfStrs)
-            std::cout<<line<<std::endl;
+	for(string & line : vecOfStrs)
+            cout<<line<<endl;
     }
 	 
 		//retrieve from Admin.txt		 
@@ -92,13 +92,13 @@ class FileManager
 		vector<string> vecOfStrs;
 	ifstream in("Admin.txt");
 	string str;
-	while (std::getline(in, str))
+	while (getline(in, str))
 			{
     if(str.size() > 0)
         vecOfStrs.push_back(str);
 			}
-	for(std::string & line : vecOfStrs)
-            std::cout<<line<<std::endl;
+	for(string & line : vecOfStrs)
+            cout<<line<<endl;
     }
 	 	 	
 	
